@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario | Hardware Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">HARDWARE<span>HUB</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Inventario</a>
+                <a href="nuevo.html">Añadir</a>
+                <a href="portafolio.html">Portafolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="header-meta">
+            <h1>Catálogo de Componentes</h1>
+            <p class="subtitle">Gestión inteligente de hardware de alto rendimiento</p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
+            <a href="nuevo.html" class="btn btn-primary">+ Nuevo Registro</a>
+        </div>
+
+        <div class="glass-card">
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Componente</th>
+                            <th>Fabricante</th>
+                            <th>Precio</th>
+                            <th>Disponibilidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tarjeta Gráfica RTX 4070 SUPER</strong></td>
+                            <td><span class="badge badge-brand">Nvidia</span></td>
+                            <td>659,90 €</td>
+                            <td><span class="badge badge-stock">5 uds.</span></td>
+                            <td><a href="detalle.html"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: none;">Detalles
+                                    →</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memoria RAM Vengeance 32GB</strong></td>
+                            <td><span class="badge badge-brand">Corsair</span></td>
+                            <td>79,99 €</td>
+                            <td><span class="badge badge-stock">50 uds.</span></td>
+                            <td><a href="detalle.html"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: none;">Detalles
+                                    →</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.onload = function () {
+            document.querySelector('.glass-card').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.glass-card').style.transition = 'opacity 0.8s ease';
+                document.querySelector('.glass-card').style.opacity = '1';
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

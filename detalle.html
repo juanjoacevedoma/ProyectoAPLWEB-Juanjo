@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Componente | Hardware Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">HARDWARE<span>HUB</span></a>
+            <div class="nav-links">
+                <a href="index.html">Inventario</a>
+                <a href="nuevo.html">Añadir</a>
+                <a href="portafolio.html">Portafolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div style="margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between;">
+            <a href="index.html" class="btn btn-secondary">← Volver al Inventario</a>
+            <span class="badge badge-brand">ID: #4070-NT</span>
+        </div>
+
+        <div class="glass-card reveal" style="padding: 4rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div
+                    style="background: var(--bg-alt); border-radius: var(--radius); aspect-ratio: 1; border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <div style="text-align: center; color: var(--text-muted);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🖼️</div>
+                        <p style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Visualización del
+                            Hardware</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.04em;">Tarjeta Gráfica RTX
+                        4070 SUPER</h1>
+                    <span class="badge badge-brand" style="margin-bottom: 2rem; display: inline-block;">Nvidia &copy;
+                        Official Product</span>
+
+                    <div
+                        style="margin-top: 1rem; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <label
+                                    style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Precio
+                                    Estimado</label>
+                                <p style="font-size: 2rem; font-weight: 800; color: var(--primary);">659,90 €</p>
+                            </div>
+                            <div>
+                                <label
+                                    style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Disponibilidad</label>
+                                <p style="font-size: 1.1rem; font-weight: 600;"><span class="badge badge-stock">5
+                                        Unidades en Almacén</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <label
+                            style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Resumen
+                            de Especificaciones</label>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">
+                            La NVIDIA GeForce RTX 4070 SUPER incluye 7.168 núcleos CUDA y 12 GB de memoria GDDR6X,
+                            ofreciendo un salto masivo en rendimiento sobre generaciones anteriores.
+                        </p>
+                        <button class="btn btn-primary"
+                            style="margin-top: 2rem; width: 100%; justify-content: center;">Solicitar Información
+                            Técnica</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.onload = function () {
+            document.querySelector('.reveal').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

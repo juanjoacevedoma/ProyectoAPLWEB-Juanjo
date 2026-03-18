@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Juan José Acevedo Mata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">HARDWARE<span>HUB</span></a>
+            <div class="nav-links">
+                <a href="index.html">Inventario</a>
+                <a href="nuevo.html">Añadir</a>
+                <a href="portafolio.html" class="active">Portafolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="portfolio-hero">
+        <div class="reveal" id="hero-content">
+            <div class="profile-circle">
+                <img src="foto.jpeg" alt="Juan José Acevedo Mata" id="profile-pic"
+                    onerror="this.src='https://ui-avatars.com/api/?name=Juan+Jose+Acevedo&background=6366f1&color=fff&size=180'">
+            </div>
+            <h1 class="portfolio-name">Juan José Acevedo Mata</h1>
+            <span class="portfolio-tagline" id="typing-text"></span>
+            <p class="subtitle" style="max-width: 600px; margin: 0 auto 2rem;">
+                Desarrollador informático enfocado en crear soluciones tecnológicas eficientes, modernas y con un diseño
+                impecable. Especialista en arquitecturas web y gestión de datos.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="mailto:jacemat435s@g.educaand.es" class="btn btn-primary">Contactar Conmigo</a>
+                <a href="index.html" class="btn btn-secondary">Ver Proyecto Hardware</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
+                <h3>Desarrollo Frontend</h3>
+                <p class="subtitle" style="font-size: 0.85rem;">Interfaces modernas, reactivas y centradas en el
+                    usuario.</p>
+            </div>
+            <div class="skill-card reveal">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
+                <h3>Backend & API</h3>
+                <p class="subtitle" style="font-size: 0.85rem;">Lógica de negocio robusta y conexiones seguras.</p>
+            </div>
+            <div class="skill-card reveal">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🗄️</div>
+                <h3>Bases de Datos</h3>
+                <p class="subtitle" style="font-size: 0.85rem;">Diseño relacional optimizado y consultas eficientes.</p>
+            </div>
+        </div>
+
+        <section style="margin-top: 6rem; text-align: center;" class="reveal">
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Mis Proyectos</h2>
+            <div class="glass-card" style="padding: 3rem;">
+                <h3>Catálogo de Hardware Pro</h3>
+                <p class="subtitle">Este proyecto actual es una muestra de integración entre diseño moderno y gestión de
+                    componentes.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+        &copy; 2024 Juan José Acevedo Mata. Hecho con pasión por el código.
+    </footer>
+
+    <!-- Scripts de Animación -->
+    <script>
+        // Efecto Reveal al Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.onload = function () {
+            document.getElementById('hero-content').classList.add('active');
+            reveal();
+            typeWriter();
+        };
+
+        // Efecto Máquina de Escribir
+        var i = 0;
+        var txt = 'Desarrollador Informático & Arquitecto de Software';
+        var speed = 50;
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("typing-text").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+</body>
+
+</html>
