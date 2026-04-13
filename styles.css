@@ -67,7 +67,9 @@ nav {
     font-size: 1.25rem;
     background: linear-gradient(to right, var(--primary), var(--accent));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     text-decoration: none;
     letter-spacing: -0.02em;
 }
