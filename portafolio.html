@@ -15,10 +15,10 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">HARDWARE<span>HUB</span></a>
+            <a href="index.php" class="logo">HARDWARE<span>HUB</span></a>
             <div class="nav-links">
-                <a href="index.html">Inventario</a>
-                <a href="nuevo.html">Añadir</a>
+                <a href="index.php">Inventario</a>
+                <a href="nuevo.php">Añadir</a>
                 <a href="portafolio.html" class="active">Portafolio</a>
             </div>
         </div>
@@ -30,45 +30,48 @@
                 <img src="foto.jpeg" alt="Juan José Acevedo Mata" id="profile-pic"
                     onerror="this.src='https://ui-avatars.com/api/?name=Juan+Jose+Acevedo&background=6366f1&color=fff&size=180'">
             </div>
-            <h1 class="portfolio-name">Juan José Acevedo Mata</h1>
-            <span class="portfolio-tagline" id="typing-text"></span>
-            <p class="subtitle" style="max-width: 600px; margin: 0 auto 2rem;">
-                Desarrollador informático enfocado en crear soluciones tecnológicas eficientes, modernas y con un diseño
-                impecable. Especialista en arquitecturas web y gestión de datos.
+            <h1 class="portfolio-name text-gradient">Juan José Acevedo Mata</h1>
+            <span class="portfolio-tagline text-gradient" id="typing-text" style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 1.5rem; display: block;"></span>
+            <p class="subtitle" style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Especialista en arquitectura de software y diseño de experiencias digitales. 
+                Transformando ideas complejas en soluciones técnicas elegantes y eficientes.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="mailto:jacemat435s@g.educaand.es" class="btn btn-primary">Contactar Conmigo</a>
-                <a href="index.html" class="btn btn-secondary">Ver Proyecto Hardware</a>
+            <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                <a href="mailto:jacemat435s@g.educaand.es" class="btn btn-primary">
+                    <span>✉️</span> Contactar Conmigo
+                </a>
+                <a href="index.php" class="btn btn-secondary">
+                    <span>🖥️</span> Ver Proyecto Hardware
+                </a>
             </div>
         </div>
     </header>
 
     <main class="container">
         <div class="skills-grid">
-            <div class="skill-card reveal">
+            <div class="skill-card glass reveal">
                 <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
-                <h3>Desarrollo Frontend</h3>
-                <p class="subtitle" style="font-size: 0.85rem;">Interfaces modernas, reactivas y centradas en el
-                    usuario.</p>
+                <h3 style="margin-bottom:0.5rem">Desarrollo Frontend</h3>
+                <p class="subtitle" style="font-size: 0.85rem;">Interfaces modernas, reactivas y fluidas.</p>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card glass reveal">
                 <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
-                <h3>Backend & API</h3>
-                <p class="subtitle" style="font-size: 0.85rem;">Lógica de negocio robusta y conexiones seguras.</p>
+                <h3 style="margin-bottom:0.5rem">Backend & API</h3>
+                <p class="subtitle" style="font-size: 0.85rem;">Lógica de negocio robusta bajo PHP y PDO.</p>
             </div>
-            <div class="skill-card reveal">
+            <div class="skill-card glass reveal">
                 <div style="font-size: 2.5rem; margin-bottom: 1rem;">🗄️</div>
-                <h3>Bases de Datos</h3>
-                <p class="subtitle" style="font-size: 0.85rem;">Diseño relacional optimizado y consultas eficientes.</p>
+                <h3 style="margin-bottom:0.5rem">Bases de Datos</h3>
+                <p class="subtitle" style="font-size: 0.85rem;">Diseño relacional MySQL eficiente.</p>
             </div>
         </div>
 
         <section style="margin-top: 6rem; text-align: center;" class="reveal">
-            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Mis Proyectos</h2>
-            <div class="glass-card" style="padding: 3rem;">
-                <h3>Catálogo de Hardware Pro</h3>
-                <p class="subtitle">Este proyecto actual es una muestra de integración entre diseño moderno y gestión de
-                    componentes.</p>
+            <h2 class="text-gradient" style="font-size: 2.5rem; margin-bottom: 2.5rem;">Mis Proyectos Destacados</h2>
+            <div class="glass-card glass" style="padding: 4rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Hardware Hub Pro</h3>
+                <p class="subtitle">Gestión avanzada de inventario con arquitectura PHP moderna, 
+                validaciones de seguridad y una interfaz de usuario de última generación.</p>
             </div>
         </section>
     </main>

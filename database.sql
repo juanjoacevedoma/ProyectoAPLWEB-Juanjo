@@ -16,6 +16,8 @@ CREATE TABLE componentes (
     precio DECIMAL(10, 2) NOT NULL,
     stock INT DEFAULT 0,
     marca_id INT NOT NULL,
+    categoria VARCHAR(100) DEFAULT 'Sin categoría',
+    imagen_url VARCHAR(500) DEFAULT NULL,
     FOREIGN KEY (marca_id) REFERENCES marcas(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
