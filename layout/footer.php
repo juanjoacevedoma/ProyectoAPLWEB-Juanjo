@@ -12,24 +12,11 @@
         </div>
     </footer>
 
+    <!-- Global High-End Scripts -->
+    <script src="global_scripts.js"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Animación de aparición suave para elementos con clase reveal
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

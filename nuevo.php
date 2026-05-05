@@ -121,8 +121,10 @@ $marcas = $pdo->query("SELECT * FROM marcas ORDER BY nombre")->fetchAll();
 
                 <div class="form-group" style="margin-top: 2.5rem; flex: 1;">
                     <label class="form-label">Especificaciones Técnicas / Descripción</label>
-                    <textarea name="descripcion" placeholder="Detalles de rendimiento, compatibilidad, garantía..." 
-                              style="width: 100%; height: 120px; background: rgba(15,23,42,0.4); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; color: white; resize: none; font-size: 0.9rem; transition: var(--transition);"></textarea>
+                    <div class="input-group">
+                        <i data-lucide="file-text" style="align-self: flex-start; margin-top: 1.25rem;"></i>
+                        <textarea name="descripcion" placeholder="Detalles de rendimiento, compatibilidad, garantía..."></textarea>
+                    </div>
                 </div>
 
                 <div style="margin-top: 3rem; display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">

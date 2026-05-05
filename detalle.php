@@ -97,18 +97,64 @@ if (!$comp) {
         </div>
     </div>
 
-    <!-- Sección de Productos Relacionados (Sugerencia Pro) -->
+    <!-- Sección de Mantenimiento y Logs -->
+    <?php
+    $sqlLogs = "SELECT * FROM mantenimientos WHERE componente_id = ? ORDER BY fecha DESC";
+    $stmtLogs = $pdo->prepare($sqlLogs);
+    $stmtLogs->execute([$id]);
+    $logsComp = $stmtLogs->fetchAll();
+    ?>
     <section style="margin-top: 6rem;" class="reveal">
-        <h2 style="font-size: 1.8rem; margin-bottom: 2rem;" class="text-gradient">Hardware Relacionado</h2>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
-            <?php for($i=0; $i<4; $i++): ?>
-                <div class="glass-card glass" style="padding: 1.5rem; opacity: 0.5; cursor: not-allowed;">
-                    <div style="width: 100%; aspect-ratio: 1; background: rgba(0,0,0,0.2); border-radius: 10px; margin-bottom: 1rem;"></div>
-                    <div style="height: 10px; background: rgba(255,255,255,0.05); width: 80%; border-radius: 5px;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.2rem;" class="text-gradient">Bitácora de Servicio</h2>
+            <a href="registrar_mantenimiento.php?componente_id=<?php echo $id; ?>" class="btn btn-primary" style="padding: 1rem 2rem;">
+                <span>🛠️</span> Registrar Revisión
+            </a>
+        </div>
+
+        <div class="glass" style="border-radius: var(--radius); overflow: hidden;">
+            <?php if (count($logsComp) > 0): ?>
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.1);">
+                            <th style="padding: 1.5rem 2rem; font-size: 0.75rem; text-transform: uppercase;">Intervención / Descripción</th>
+                            <th style="padding: 1.5rem 2rem; font-size: 0.75rem; text-transform: uppercase;">Estado</th>
+                            <th style="padding: 1.5rem 2rem; font-size: 0.75rem; text-transform: uppercase;">Metadatos Técnicos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($logsComp as $log): ?>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem;">
+                                    <div style="font-weight: 700; color: white;"><?php echo htmlspecialchars($log['descripcion']); ?></div>
+                                </td>
+                                <td style="padding: 1.5rem 2rem;">
+                                    <span style="font-size: 0.7rem; font-weight: 800; padding: 0.3rem 0.7rem; border-radius: 6px; 
+                                        <?php 
+                                            if($log['estado'] == 'Completado') echo 'background: rgba(16, 185, 129, 0.15); color: #4ade80;';
+                                            elseif($log['estado'] == 'Pendiente') echo 'background: rgba(245, 158, 11, 0.15); color: #fbbf24;';
+                                            else echo 'background: rgba(239, 68, 68, 0.15); color: #f87171;';
+                                        ?>">
+                                        <?php echo $log['estado']; ?>
+                                    </span>
+                                </td>
+                                <td style="padding: 1.5rem 2rem;">
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); font-family: monospace;">TÉCNICO: <?php echo htmlspecialchars($log['tecnico']); ?></div>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); font-family: monospace;"><?php echo date('d/m/Y H:i', strtotime($log['fecha'])); ?></div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <div style="padding: 4rem; text-align: center; color: var(--text-muted);">
+                    <p>No hay intervenciones técnicas registradas para este activo.</p>
                 </div>
-            <?php endfor; ?>
+            <?php endif; ?>
         </div>
     </section>
+
+    <!-- Sección de Productos Relacionados -->
 </main>
 
 <?php require_once 'layout/footer.php'; ?>

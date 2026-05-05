@@ -9,110 +9,222 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.1">
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollBar"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <nav>
         <div class="nav-container">
             <a href="index.php" class="logo">HARDWARE<span>HUB</span></a>
             <div class="nav-links">
                 <a href="index.php">Inventario</a>
+                <a href="analitica.php">Analítica</a>
                 <a href="nuevo.php">Añadir</a>
                 <a href="portafolio.html" class="active">Portafolio</a>
             </div>
         </div>
     </nav>
 
-    <header class="portfolio-hero">
-        <div class="reveal" id="hero-content">
+    <header class="portfolio-hero reveal">
+        <div id="hero-content">
             <div class="profile-circle">
                 <img src="foto.jpeg" alt="Juan José Acevedo Mata" id="profile-pic"
                     onerror="this.src='https://ui-avatars.com/api/?name=Juan+Jose+Acevedo&background=6366f1&color=fff&size=180'">
             </div>
             <h1 class="portfolio-name text-gradient">Juan José Acevedo Mata</h1>
-            <span class="portfolio-tagline text-gradient" id="typing-text" style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 1.5rem; display: block;"></span>
-            <p class="subtitle" style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Especialista en arquitectura de software y diseño de experiencias digitales. 
-                Transformando ideas complejas en soluciones técnicas elegantes y eficientes.
+            <span class="portfolio-tagline text-gradient" id="typing-text" style="display: block;"></span>
+            <p class="subtitle" style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.8;">
+                Especialista en arquitectura de software y diseño de sistemas escalables. 
+                Transformando ideas complejas en realidades técnicas de alta precisión.
             </p>
-            <div style="display: flex; gap: 1.5rem; justify-content: center;">
+            <div style="display: flex; gap: 2rem; justify-content: center;">
                 <a href="mailto:jacemat435s@g.educaand.es" class="btn btn-primary">
                     <span>✉️</span> Contactar Conmigo
                 </a>
-                <a href="index.php" class="btn btn-secondary">
-                    <span>🖥️</span> Ver Proyecto Hardware
+                <a href="index.php" class="btn btn-secondary" style="border: 1px solid var(--border); background: rgba(255,255,255,0.05);">
+                    <span>🖥️</span> Ver Proyecto Pro
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- Tech Stack Section -->
+    <section class="tech-stack-container reveal">
+        <div class="tech-marquee">
+            <div class="tech-item"><span>🐘</span> PHP 8.2 & PDO</div>
+            <div class="tech-item"><span>🚀</span> MODERN ARCHITECTURE</div>
+            <div class="tech-item"><span>🎨</span> VANILLA CSS 3.0</div>
+            <div class="tech-item"><span>📦</span> MYSQL OPTIMIZATION</div>
+            <div class="tech-item"><span>🛠️</span> GIT VERSION CONTROL</div>
+            <div class="tech-item"><span>🔌</span> RESTFUL SERVICES</div>
+            <div class="tech-item"><span>📱</span> RESPONSIVE UX</div>
+            <!-- Loop -->
+            <div class="tech-item"><span>🐘</span> PHP 8.2 & PDO</div>
+            <div class="tech-item"><span>🚀</span> MODERN ARCHITECTURE</div>
+            <div class="tech-item"><span>🎨</span> VANILLA CSS 3.0</div>
+            <div class="tech-item"><span>📦</span> MYSQL OPTIMIZATION</div>
+            <div class="tech-item"><span>🛠️</span> GIT VERSION CONTROL</div>
+            <div class="tech-item"><span>🔌</span> RESTFUL SERVICES</div>
+            <div class="tech-item"><span>📱</span> RESPONSIVE UX</div>
+        </div>
+    </section>
+
     <main class="container">
         <div class="skills-grid">
-            <div class="skill-card glass reveal">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💻</div>
-                <h3 style="margin-bottom:0.5rem">Desarrollo Frontend</h3>
-                <p class="subtitle" style="font-size: 0.85rem;">Interfaces modernas, reactivas y fluidas.</p>
+            <div class="skill-card glass reveal tilt-parent">
+                <div class="tilt-child">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">💎</div>
+                    <h3 style="margin-bottom:1rem; font-size: 1.5rem;">Frontend Excellence</h3>
+                    <p class="subtitle" style="font-size: 0.95rem;">Interfaces premium con micro-interacciones y diseño atómico para experiencias memorables.</p>
+                </div>
             </div>
-            <div class="skill-card glass reveal">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
-                <h3 style="margin-bottom:0.5rem">Backend & API</h3>
-                <p class="subtitle" style="font-size: 0.85rem;">Lógica de negocio robusta bajo PHP y PDO.</p>
+            <div class="skill-card glass reveal tilt-parent">
+                <div class="tilt-child">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">⚡</div>
+                    <h3 style="margin-bottom:1rem; font-size: 1.5rem;">Backend Mastery</h3>
+                    <p class="subtitle" style="font-size: 0.95rem;">Sistemas robustos bajo PHP con gestión de estado avanzada y seguridad por diseño.</p>
+                </div>
             </div>
-            <div class="skill-card glass reveal">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🗄️</div>
-                <h3 style="margin-bottom:0.5rem">Bases de Datos</h3>
-                <p class="subtitle" style="font-size: 0.85rem;">Diseño relacional MySQL eficiente.</p>
+            <div class="skill-card glass reveal tilt-parent">
+                <div class="tilt-child">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🛰️</div>
+                    <h3 style="margin-bottom:1rem; font-size: 1.5rem;">Systems Architect</h3>
+                    <p class="subtitle" style="font-size: 0.95rem;">Diseño de infraestructuras de datos complejas y flujos de trabajo automatizados.</p>
+                </div>
             </div>
         </div>
 
-        <section style="margin-top: 6rem; text-align: center;" class="reveal">
-            <h2 class="text-gradient" style="font-size: 2.5rem; margin-bottom: 2.5rem;">Mis Proyectos Destacados</h2>
-            <div class="glass-card glass" style="padding: 4rem;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Hardware Hub Pro</h3>
-                <p class="subtitle">Gestión avanzada de inventario con arquitectura PHP moderna, 
-                validaciones de seguridad y una interfaz de usuario de última generación.</p>
+        <!-- System Terminal -->
+        <section style="margin-top: 10rem;" class="reveal">
+            <h2 class="text-gradient" style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Operational Status</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot" style="background: #ff5f56;"></div>
+                    <div class="terminal-dot" style="background: #ffbd2e;"></div>
+                    <div class="terminal-dot" style="background: #27c93f;"></div>
+                    <span style="color: #94a3b8; font-size: 0.8rem; margin-left: 1.5rem; font-family: monospace; letter-spacing: 1px;">juanjo@workstation:~</span>
+                </div>
+                <div class="terminal-body">
+                    <div><span class="terminal-prompt">></span> <span id="terminal-text"></span><span class="terminal-cursor"></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Spotlight -->
+        <section style="margin-top: 10rem; text-align: center;" class="reveal">
+            <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: 4rem;">Featured Engineering</h2>
+            <div class="hardware-grid">
+                <div class="hardware-card glass tilt-parent">
+                    <div class="tilt-child">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Hardware Hub">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">CORE SYSTEM</span>
+                            <h3 class="card-title">Hardware Hub Pro</h3>
+                            <p class="subtitle" style="font-size: 0.9rem; margin-bottom: 2.5rem; line-height: 1.6;">Solución enterprise para la gestión de activos tecnológicos con analítica predictiva básica.</p>
+                            <div class="card-footer">
+                                <a href="index.php" class="btn btn-primary" style="width: 100%; justify-content: center;">Launch Dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hardware-card glass tilt-parent">
+                    <div class="tilt-child">
+                        <div class="card-img-container">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Security">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">DATA SECURITY</span>
+                            <h3 class="card-title">Shield Protocol</h3>
+                            <p class="subtitle" style="font-size: 0.9rem; margin-bottom: 2.5rem; line-height: 1.6;">Implementación de estándares de cifrado y auditoría de integridad para sistemas críticos.</p>
+                            <div class="card-footer">
+                                <span style="color: var(--primary); font-size: 0.85rem; font-weight: 800; letter-spacing: 2px;">UNDER DEVELOPMENT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-        &copy; 2024 Juan José Acevedo Mata. Hecho con pasión por el código.
+    <footer style="padding: 8rem 0 4rem; text-align: center; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 10rem;">
+        <div style="margin-bottom: 3rem; display: flex; gap: 3rem; justify-content: center;">
+            <a href="#" style="color: var(--text-muted); text-decoration: none; font-weight: 800; letter-spacing: 1px; font-size: 0.8rem;">LINKEDIN</a>
+            <a href="#" style="color: var(--text-muted); text-decoration: none; font-weight: 800; letter-spacing: 1px; font-size: 0.8rem;">GITHUB</a>
+            <a href="#" style="color: var(--text-muted); text-decoration: none; font-weight: 800; letter-spacing: 1px; font-size: 0.8rem;">INSTAGRAM</a>
+        </div>
+        <p style="opacity: 0.5; font-size: 0.8rem;">&copy; 2024 JUAN JOSÉ ACEVEDO MATA / DIGITAL ARCHITECT</p>
     </footer>
 
-    <!-- Scripts de Animación -->
+    <!-- Global High-End Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="global_scripts.js"></script>
     <script>
-        // Efecto Reveal al Scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        // Page specific logic (Terminal & Typing)
+        window.addEventListener('DOMContentLoaded', () => {
+             // Typing Hero
+            var typeI = 0;
+            var txt = 'Full Stack Developer & Systems Architect / Innovation Lead';
+            function typeWriter() {
+                if (typeI < txt.length) {
+                    document.getElementById("typing-text").innerHTML += txt.charAt(typeI);
+                    typeI++;
+                    setTimeout(typeWriter, 50);
                 }
             }
-        }
-        window.addEventListener("scroll", reveal);
-        window.onload = function () {
-            document.getElementById('hero-content').classList.add('active');
-            reveal();
-            typeWriter();
-        };
 
-        // Efecto Máquina de Escribir
-        var i = 0;
-        var txt = 'Desarrollador Informático & Arquitecto de Software';
-        var speed = 50;
-        function typeWriter() {
-            if (i < txt.length) {
-                document.getElementById("typing-text").innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
+            // Terminal Status
+            var termI = 0;
+            var termLines = [
+                'initializing_system_handshake...',
+                'loading_modules [PHP, MySQL, JS]... DONE',
+                'checking_security_protocols... SECURE',
+                'deploying_portfolio_status... OPERATIONAL',
+                'welcome_admin_juanjo@workstation:~$ ready'
+            ];
+            var termText = termLines.join('\n');
+            function terminalType() {
+                if (termI < termText.length) {
+                    let char = termText.charAt(termI);
+                    document.getElementById("terminal-text").innerHTML += char === '\n' ? '<br>> ' : char;
+                    termI++;
+                    setTimeout(terminalType, 20);
+                }
             }
-        }
+
+            // Particles
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#6366f1" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.2, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#6366f1", "opacity": 0.1, "width": 1 },
+                    "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+                }
+            });
+
+            // Start sequences
+            setTimeout(typeWriter, 500);
+            setTimeout(terminalType, 1000);
+            
+            // Sync with global scroll bar if exists
+            window.addEventListener('scroll', () => {
+                let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                let scrolled = (winScroll / height) * 100;
+                document.getElementById("scrollBar").style.width = scrolled + "%";
+            });
+        });
     </script>
 </body>
-
 </html>

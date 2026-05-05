@@ -22,9 +22,6 @@
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg);
-    background-image: 
-        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
     color: var(--text);
     line-height: 1.5;
     min-height: 100vh;
@@ -263,6 +260,7 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
+    text-decoration: none !important;
 }
 
 .btn-primary {
@@ -303,25 +301,22 @@ nav {
 /* Animations */
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
-    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+::-webkit-scrollbar-thumb { 
+    background: linear-gradient(var(--primary), var(--accent)); 
+    border-radius: 5px; 
+}
 
 /* --- Extreme Pro Forms --- */
 .form-label {
@@ -367,11 +362,27 @@ nav {
     outline: none !important;
 }
 
-/* Custom Select Arrow */
+/* Custom Select Styling */
 .input-group select {
     appearance: none;
     -webkit-appearance: none;
     cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2rem;
+    padding-right: 3rem !important;
+}
+
+.input-group select option {
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem;
+}
+
+.input-group textarea {
+    min-height: 120px;
+    resize: none;
 }
 
 /* Technical Scan Animation */
@@ -409,4 +420,270 @@ nav {
     background: rgba(255, 255, 255, 0.05);
     color: white;
     border-color: white;
+}
+
+/* --- Portfolio Specific Styles --- */
+.portfolio-hero {
+    padding: 10rem 0 6rem;
+    text-align: center;
+    position: relative;
+}
+
+.profile-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 3rem;
+    padding: 10px;
+    border: 2px solid var(--primary);
+    position: relative;
+    box-shadow: 0 0 50px var(--primary-glow);
+    background: rgba(2, 6, 23, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.profile-circle::after {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 2px dashed var(--primary);
+    animation: rotate 30s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--bg-alt);
+    border: 4px solid var(--bg);
+}
+
+.portfolio-name {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.portfolio-tagline {
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    min-height: 1.5em;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    opacity: 0.6;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 6rem;
+}
+
+.skill-card {
+    padding: 4rem 2.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-15px);
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+    box-shadow: 0 30px 60px -12px rgba(0,0,0,0.5);
+}
+
+.tech-stack-container {
+    margin-top: 8rem;
+    overflow: hidden;
+    padding: 4rem 0;
+    background: rgba(0,0,0,0.2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.tech-marquee {
+    display: flex;
+    gap: 6rem;
+    animation: marquee 40s linear infinite;
+    width: max-content;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.tech-item:hover {
+    opacity: 1;
+    color: white;
+}
+
+.tech-item span {
+    font-size: 2rem;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Terminal Component */
+.terminal-window {
+    background: #050a14;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    max-width: 900px;
+    margin: 6rem auto;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.terminal-header {
+    background: #111827;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.terminal-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+.terminal-body {
+    padding: 3rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 1rem;
+    color: #10b981;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.terminal-prompt {
+    color: var(--primary);
+    margin-right: 1rem;
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.3em;
+    background: #10b981;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* --- New Advanced Functionalities --- */
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    z-index: 9999;
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* Particles Canvas */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #020617;
+    pointer-events: none;
+}
+
+/* --- Even More Pro Enhancements --- */
+
+/* Custom Cursor - Refined and Stable */
+.custom-cursor {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: opacity 0.3s ease;
+    will-change: transform;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+}
+
+/* Spotlight Effect */
+.glass {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(99, 102, 241, 0.08),
+        transparent 40%
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.glass:hover::before {
+    opacity: 1;
+}
+
+.tilt-child {
+    z-index: 2;
+    position: relative;
+}
+
+/* Tilt Parent */
+.tilt-parent {
+    perspective: 1000px;
+}
+
+.tilt-child {
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
 }

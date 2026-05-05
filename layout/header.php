@@ -4,26 +4,29 @@ require_once 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pageTitle ?? 'Hardware Hub'; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
     <?php
     $alert = get_alert();
     if ($alert): ?>
         <script>
             Swal.fire({
-                title: '<?php echo ($alert['type'] == 'success') ? "¡Muy bien!" : "Aviso"; ?>',
+                title: '<?php echo ($alert['type'] == 'success') ? "¡Hecho!" : "Aviso Técnico"; ?>',
                 text: '<?php echo $alert['message']; ?>',
                 icon: '<?php echo $alert['type']; ?>',
                 confirmButtonColor: '#818cf8',
@@ -35,9 +38,15 @@ require_once 'config.php';
 
     <nav>
         <div class="nav-container">
-            <a href="index.php" class="logo">HARDWARE<span>HUB</span></a>
+            <a href="index.php" class="logo">HARDWARE<span>HUBJUANJO</span></a>
             <div class="nav-links">
                 <a href="index.php" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Inventario</a>
+                <a href="analitica.php"
+                    class="<?php echo ($currentPage == 'analitica') ? 'active' : ''; ?>">Analítica</a>
+                <a href="auditoria.php"
+                    class="<?php echo ($currentPage == 'auditoria') ? 'active' : ''; ?>">Auditoría</a>
+                <a href="historial.php"
+                    class="<?php echo ($currentPage == 'historial') ? 'active' : ''; ?>">Historial</a>
                 <a href="nuevo.php" class="<?php echo ($currentPage == 'nuevo') ? 'active' : ''; ?>">Añadir</a>
                 <a href="portafolio.html">Portafolio</a>
             </div>
