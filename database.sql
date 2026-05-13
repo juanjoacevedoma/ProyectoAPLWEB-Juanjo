@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2026 a las 17:53:50
+-- Tiempo de generación: 13-05-2026 a las 21:26:57
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,11 +43,11 @@ CREATE TABLE `componentes` (
 --
 
 INSERT INTO `componentes` (`id`, `nombre`, `descripcion`, `precio`, `stock`, `marca_id`, `categoria`, `imagen_url`) VALUES
-(1, 'Placa Base ROG Strix B550-F', 'Placa base ATX para procesadores AMD AM4', 189.99, 15, 1, 'Sin categoría', NULL),
-(3, 'Tarjeta Gráfica RTX 4060 Ti', '8GB GDDR6', 399.00, 10, 3, 'Sin categoría', NULL),
-(4, 'Ratón G Pro X Superlight', 'Ratón inalámbrico ultraligero', 129.50, 20, 4, 'Sin categoría', NULL),
-(5, 'Tarjeta Gráfica RTX 4070 SUPER', '12GB GDDR6X', 659.90, 5, 5, 'Sin categoría', NULL),
-(7, 'CPU', 'PRUEBA', 1200.00, 15, 2, 'CPU', '');
+(8, 'Intel Core i9', '', 500.00, 10, 1, 'CP', 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Intel_Core_i9_2020_logo.svg'),
+(9, 'Tarjeta Gráfica RTX 4070 SUPER', '', 127.00, 12, 5, 'GPU', 'https://www.coolmod.com/images/product/large/PROD-032473_1.jpg'),
+(10, 'Ratón G Pro X Superlight', '', 126.99, 12, 4, 'Hardware', 'https://www.neobyte.es/72751-large_default/logitech-pro-x-superlight-raton-gaming-inalambrico.jpg'),
+(11, 'Tarjeta Gráfica RTX 4060 Ti', '', 400.00, 10, 3, 'GPU', 'https://media.ldlc.com/r1600/ld/products/00/06/05/19/LD0006051943.jpg'),
+(12, 'Placa Base ROG Strix B550-F', '', 300.00, 10, 1, 'Hardware', 'https://media.ldlc.com/r1600/ld/products/00/05/91/26/LD0005912642_1.jpg');
 
 -- --------------------------------------------------------
 
@@ -69,8 +69,7 @@ CREATE TABLE `mantenimientos` (
 --
 
 INSERT INTO `mantenimientos` (`id`, `componente_id`, `fecha`, `descripcion`, `tecnico`, `estado`) VALUES
-(2, 4, '2026-05-05 17:16:35', 'kjjkj', 'juanjo', 'Pendiente'),
-(3, 7, '2026-05-05 19:35:02', 'Configurar Overclocking', 'JUANJO', 'Completado');
+(4, 8, '2026-05-13 20:59:56', 'Solucionado prueba', 'JUANJO', 'Completado');
 
 -- --------------------------------------------------------
 
@@ -114,7 +113,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `rol`) VALUES
-(1, 'admin', '$2y$10$mPgd7c4gra715CXKkB2fGu32DNQwOGPC5M5BLrERIfCbO8OcoSpQ6', 'Administrador Juanjo', 'admin');
+(1, 'admin', '$2y$10$mPgd7c4gra715CXKkB2fGu32DNQwOGPC5M5BLrERIfCbO8OcoSpQ6', 'Administrador Juanjo', 'admin'),
+(2, 'pepe', '$2y$10$yYadSLctWLcCtlqtpU.s7e3lmb8xQDsc7ctkx5KKuibGIfXyolYu2', 'Pepe Lluyot', 'admin'),
+(3, 'prueba', '$2y$10$NK0ho.1qDMn82uLFnO80gO8ykbnhBEUuHaRGyNMwh9kXXe8mZX8U2', 'Editor', 'editor');
 
 --
 -- Índices para tablas volcadas
@@ -156,13 +157,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `componentes`
 --
 ALTER TABLE `componentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `mantenimientos`
 --
 ALTER TABLE `mantenimientos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `marcas`
@@ -174,7 +175,7 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
