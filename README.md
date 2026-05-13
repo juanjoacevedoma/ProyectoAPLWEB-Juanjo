@@ -20,10 +20,6 @@ Para acceder a las funciones de gestión, el sistema implementa dos niveles de p
 | **Administrador** | Control total del sistema + **Gestión de Usuarios**. |
 | **Editor** | Gestión completa del inventario y mantenimientos. |
 
-### Credenciales de Acceso (Test):
-- **Administrador**: `admin` / `admin123`
-- **Editor**: `prueba` / `admin123`
-
 ## 🛠️ Tecnologías Utilizadas
 - **Backend**: PHP 8.2 (PDO para conexiones seguras).
 - **Frontend**: HTML5, CSS3 (Custom Variables, Flexbox, Grid), JavaScript (ES6+).
