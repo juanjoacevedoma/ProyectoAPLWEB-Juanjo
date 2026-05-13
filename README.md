@@ -12,10 +12,17 @@ Esta aplicación permite el control total sobre un catálogo de componentes de h
 - **Interfaz Premium**: Diseño responsive, modo oscuro y efectos visuales avanzados.
 - **Seguridad**: Configuración protegida mediante archivos de entorno y exclusiones de Git.
 
-## 🔐 Administración
-Para acceder a las funciones de gestión (Añadir, Editar, Eliminar), es necesario iniciar sesión:
-- **Usuario**: `admin`
-- **Contraseña**: `admin123`
+## 🔐 Roles y Accesos
+Para acceder a las funciones de gestión, el sistema implementa dos niveles de permisos:
+
+| Rol | Funciones |
+| :--- | :--- |
+| **Administrador** | Control total del sistema + **Gestión de Usuarios**. |
+| **Editor** | Gestión completa del inventario y mantenimientos. |
+
+### Credenciales de Acceso (Test):
+- **Administrador**: `admin` / `admin123`
+- **Editor**: `prueba` / `admin123`
 
 ## 🛠️ Tecnologías Utilizadas
 - **Backend**: PHP 8.2 (PDO para conexiones seguras).
@@ -49,7 +56,7 @@ $pass = "tu_password";
 
 ## 🌐 Enlace a Producción
 Puedes ver el proyecto desplegado en el siguiente enlace:
-👉 **[Hardware Hub en dwes.site](https://juanjoacevedo.dwes.site/ProyectoAPLWEB-Juanjo/)**
+👉 **[Hardware Hub Pro - alumno16.dwes.site](https://alumno16.dwes.site/)**
 
 ---
 *Desarrollado por Juanjo Acevedo - 2026*
