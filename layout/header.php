@@ -39,16 +39,19 @@ require_once 'config.php';
     <nav>
         <div class="nav-container">
             <div class="nav-left">
-                <a href="index.php" class="logo">HARDWARE<span>HUB</span></a>
+                <a href="index.php" class="logo">HARDWARE<span>HUBJUANJO</span></a>
             </div>
-            
+
             <div class="nav-center">
                 <div class="nav-group">
                     <a href="index.php" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Inventario</a>
-                    <a href="analitica.php" class="<?php echo ($currentPage == 'analitica') ? 'active' : ''; ?>">Analítica</a>
-                    <a href="auditoria.php" class="<?php echo ($currentPage == 'auditoria') ? 'active' : ''; ?>">Auditoría</a>
-                    <a href="historial.php" class="<?php echo ($currentPage == 'historial') ? 'active' : ''; ?>">Historial</a>
-                    
+                    <a href="analitica.php"
+                        class="<?php echo ($currentPage == 'analitica') ? 'active' : ''; ?>">Analítica</a>
+                    <a href="auditoria.php"
+                        class="<?php echo ($currentPage == 'auditoria') ? 'active' : ''; ?>">Auditoría</a>
+                    <a href="historial.php"
+                        class="<?php echo ($currentPage == 'historial') ? 'active' : ''; ?>">Historial</a>
+
                     <?php if (is_logged_in()): ?>
                         <a href="nuevo.php" class="nav-btn-add <?php echo ($currentPage == 'nuevo') ? 'active' : ''; ?>">
                             <i data-lucide="plus"></i> Registro
@@ -61,7 +64,7 @@ require_once 'config.php';
                 <div class="nav-group">
                     <a href="portafolio.html" class="nav-link-alt">Portafolio</a>
                     <div class="nav-divider"></div>
-                    
+
                     <?php if (is_logged_in()): ?>
                         <div class="user-profile">
                             <div class="user-avatar"><?php echo strtoupper(substr(get_logged_user(), 0, 1)); ?></div>

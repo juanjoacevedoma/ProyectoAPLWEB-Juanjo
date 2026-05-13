@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_nombre'] = $user['nombre'];
             $_SESSION['user_rol'] = $user['rol'];
-            
+
             set_alert("Bienvenido de nuevo, " . $user['nombre'], "success");
             header("Location: index.php");
             exit();
@@ -30,25 +30,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso Administrativo | Hardware Hub</title>
+    <title>Acceso Administrativo | Hardware Hub Juanjo</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="login-page">
     <div class="login-wrapper">
         <div class="brand-side">
             <div class="brand-content">
                 <div class="brand-logo">
                     <i data-lucide="cpu"></i>
-                    <span>HARDWARE<span>HUB</span></span>
+                    <span>HARDWARE<span>HUBJUANJO</span></span>
                 </div>
                 <h2>Panel Administrativo</h2>
                 <p>Gestión avanzada de inventario y analítica de hardware para profesionales.</p>
-                
+
                 <div class="brand-footer">
                     <div class="badge-item">
                         <i data-lucide="shield-check"></i> Acceso Seguro
@@ -77,7 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="usuario">Usuario</label>
                         <div class="input-wrapper">
                             <i data-lucide="user"></i>
-                            <input type="text" id="usuario" name="usuario" required placeholder="Nombre de usuario" autofocus>
+                            <input type="text" id="usuario" name="usuario" required placeholder="Nombre de usuario"
+                                autofocus>
                         </div>
                     </div>
 
@@ -108,4 +111,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         lucide.createIcons();
     </script>
 </body>
+
 </html>
