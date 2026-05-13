@@ -23,7 +23,28 @@ function is_logged_in() {
  */
 function require_auth() {
     if (!is_logged_in()) {
+        $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
+        set_alert('Acceso restringido. Es necesario iniciar sesión para continuar.', 'warning');
         header("Location: login.php");
+        exit();
+    }
+}
+
+/**
+ * Comprueba si el usuario es administrador
+ */
+function is_admin() {
+    return isset($_SESSION['user_rol']) && $_SESSION['user_rol'] === 'admin';
+}
+
+/**
+ * Requiere rol de administrador
+ */
+function require_admin() {
+    require_auth();
+    if (!is_admin()) {
+        set_alert('Permisos insuficientes para acceder a esta sección.', 'error');
+        header("Location: index.php");
         exit();
     }
 }

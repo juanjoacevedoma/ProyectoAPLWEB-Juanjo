@@ -17,8 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_nombre'] = $user['nombre'];
             $_SESSION['user_rol'] = $user['rol'];
 
-            set_alert("Bienvenido de nuevo, " . $user['nombre'], "success");
-            header("Location: index.php");
+            $welcomeMsg = "Bienvenido de nuevo, " . $user['nombre'];
+            set_alert($welcomeMsg, "success");
+
+            // Redirección inteligente
+            $redirectTo = $_SESSION['redirect_to'] ?? 'index.php';
+            unset($_SESSION['redirect_to']);
+            header("Location: " . $redirectTo);
             exit();
         } else {
             $error = "Credenciales incorrectas.";

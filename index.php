@@ -68,11 +68,10 @@ sort($categoriasArr);
                 placeholder="Buscar por nombre, fabricante o SKU...">
         </div>
         <div style="width: 1px; background: var(--border); margin: 0.5rem 0;"></div>
-        <select id="filterCategory"
-            style="background: transparent; border: none; color: white; padding: 0 2rem; font-weight: 600; cursor: pointer; outline: none;">
+        <select id="filterCategory" class="filter-select">
             <option value="all">Todas las Categorías</option>
             <?php foreach ($categoriasArr as $cat): ?>
-                <option value="<?php echo htmlspecialchars($cat); ?>" style="background: var(--bg-alt);">
+                <option value="<?php echo htmlspecialchars($cat); ?>">
                     <?php echo htmlspecialchars($cat); ?>
                 </option>
             <?php endforeach; ?>

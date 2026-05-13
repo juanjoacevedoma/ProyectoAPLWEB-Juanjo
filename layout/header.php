@@ -52,6 +52,12 @@ require_once 'config.php';
                     <a href="historial.php"
                         class="<?php echo ($currentPage == 'historial') ? 'active' : ''; ?>">Historial</a>
 
+                    <?php if (is_admin()): ?>
+                        <a href="usuarios.php" class="<?php echo ($currentPage == 'usuarios') ? 'active' : ''; ?>">
+                            <i data-lucide="users" style="width:16px; height:16px;"></i> Usuarios
+                        </a>
+                    <?php endif; ?>
+
                     <?php if (is_logged_in()): ?>
                         <a href="nuevo.php" class="nav-btn-add <?php echo ($currentPage == 'nuevo') ? 'active' : ''; ?>">
                             <i data-lucide="plus"></i> Registro
