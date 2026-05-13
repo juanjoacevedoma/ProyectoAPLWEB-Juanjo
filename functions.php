@@ -8,16 +8,43 @@ function start_secure_session() {
     }
 }
 
+// Iniciar sesión automáticamente al cargar funciones
+start_secure_session();
+
+/**
+ * Comprueba si el usuario está autenticado
+ */
+function is_logged_in() {
+    return isset($_SESSION['user_id']);
+}
+
+/**
+ * Redirige al login si no está autenticado
+ */
+function require_auth() {
+    if (!is_logged_in()) {
+        header("Location: login.php");
+        exit();
+    }
+}
+
+/**
+ * Obtiene los datos del usuario logueado
+ */
+function get_logged_user() {
+    return $_SESSION['user_nombre'] ?? 'Invitado';
+}
+
 /**
  * Establece un mensaje de alerta en la sesión
  */
 function set_alert($message, $type = 'success') {
-    start_secure_session();
     $_SESSION['alert'] = [
         'message' => $message,
         'type' => $type
     ];
 }
+// ... (resto de funciones existentes)
 
 /**
  * Obtiene y limpia la alerta de la sesión

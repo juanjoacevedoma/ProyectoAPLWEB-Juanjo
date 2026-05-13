@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_auth();
 
 $id = $_GET['id'] ?? 0;
 

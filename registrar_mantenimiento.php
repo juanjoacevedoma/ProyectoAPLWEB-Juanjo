@@ -2,6 +2,7 @@
 $pageTitle = 'Registrar Evento Técnico | Hardware Hub Pro';
 $currentPage = 'historial';
 require_once 'layout/header.php';
+require_auth();
 
 // Obtener componentes para el selector
 $stmt = $pdo->query("SELECT id, nombre FROM componentes ORDER BY nombre ASC");

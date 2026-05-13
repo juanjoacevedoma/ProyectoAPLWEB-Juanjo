@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_auth();
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

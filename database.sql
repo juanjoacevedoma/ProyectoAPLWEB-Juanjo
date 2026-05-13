@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2026 a las 17:22:01
+-- Tiempo de generación: 13-05-2026 a las 17:53:50
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -46,7 +46,8 @@ INSERT INTO `componentes` (`id`, `nombre`, `descripcion`, `precio`, `stock`, `ma
 (1, 'Placa Base ROG Strix B550-F', 'Placa base ATX para procesadores AMD AM4', 189.99, 15, 1, 'Sin categoría', NULL),
 (3, 'Tarjeta Gráfica RTX 4060 Ti', '8GB GDDR6', 399.00, 10, 3, 'Sin categoría', NULL),
 (4, 'Ratón G Pro X Superlight', 'Ratón inalámbrico ultraligero', 129.50, 20, 4, 'Sin categoría', NULL),
-(5, 'Tarjeta Gráfica RTX 4070 SUPER', '12GB GDDR6X', 659.90, 5, 5, 'Sin categoría', NULL);
+(5, 'Tarjeta Gráfica RTX 4070 SUPER', '12GB GDDR6X', 659.90, 5, 5, 'Sin categoría', NULL),
+(7, 'CPU', 'PRUEBA', 1200.00, 15, 2, 'CPU', '');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,8 @@ CREATE TABLE `mantenimientos` (
 --
 
 INSERT INTO `mantenimientos` (`id`, `componente_id`, `fecha`, `descripcion`, `tecnico`, `estado`) VALUES
-(2, 4, '2026-05-05 17:16:35', 'kjjkj', 'Jjuanjo', 'Pendiente');
+(2, 4, '2026-05-05 17:16:35', 'kjjkj', 'juanjo', 'Pendiente'),
+(3, 7, '2026-05-05 19:35:02', 'Configurar Overclocking', 'JUANJO', 'Completado');
 
 -- --------------------------------------------------------
 
@@ -92,6 +94,27 @@ INSERT INTO `marcas` (`id`, `nombre`, `pais`) VALUES
 (3, 'MSI', 'Taiwán'),
 (4, 'Logitech', 'Suiza'),
 (5, 'Nvidia', 'Estados Unidos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `rol` enum('admin','editor') DEFAULT 'admin'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `rol`) VALUES
+(1, 'admin', '$2y$10$mPgd7c4gra715CXKkB2fGu32DNQwOGPC5M5BLrERIfCbO8OcoSpQ6', 'Administrador Juanjo', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -119,6 +142,13 @@ ALTER TABLE `marcas`
   ADD UNIQUE KEY `nombre` (`nombre`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario` (`usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -126,19 +156,25 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `componentes`
 --
 ALTER TABLE `componentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `mantenimientos`
 --
 ALTER TABLE `mantenimientos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

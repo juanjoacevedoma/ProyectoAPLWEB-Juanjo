@@ -2,6 +2,7 @@
 $pageTitle = 'Editar Registro Técnico | Hardware Hub Pro';
 $currentPage = 'historial';
 require_once 'layout/header.php';
+require_auth();
 
 $id = $_GET['id'] ?? 0;
 

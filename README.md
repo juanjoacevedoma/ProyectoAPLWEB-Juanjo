@@ -1,0 +1,55 @@
+# Proyecto APLWEB - Hardware Hub Professional 🛡️
+
+Dashboard profesional de gestión de inventario y mantenimiento de hardware para sistemas corporativos.
+
+## 🚀 Descripción
+Esta aplicación permite el control total sobre un catálogo de componentes de hardware, facilitando el seguimiento de stock, la gestión de marcas y el registro detallado de intervenciones de mantenimiento. Diseñada con una estética **Corporate Pro** basada en Glassmorphism y visualización de datos moderna.
+
+### Características Principales:
+- **Gestión CRUD**: Registro completo de componentes y mantenimientos (Protegido por login).
+- **Control de Acceso**: Sistema de autenticación para asegurar la integridad de los datos.
+- **Analítica en Tiempo Real**: Dashboards visuales para stock y estado de equipos.
+- **Interfaz Premium**: Diseño responsive, modo oscuro y efectos visuales avanzados.
+- **Seguridad**: Configuración protegida mediante archivos de entorno y exclusiones de Git.
+
+## 🔐 Administración
+Para acceder a las funciones de gestión (Añadir, Editar, Eliminar), es necesario iniciar sesión:
+- **Usuario**: `admin`
+- **Contraseña**: `admin123`
+
+## 🛠️ Tecnologías Utilizadas
+- **Backend**: PHP 8.2 (PDO para conexiones seguras).
+- **Frontend**: HTML5, CSS3 (Custom Variables, Flexbox, Grid), JavaScript (ES6+).
+- **Base de Datos**: MySQL / MariaDB.
+- **Servidor**: Apache (XAMPP / Producción dwes.site).
+
+## ⚙️ Instalación y Configuración
+
+### 1. Requisitos previos
+- Servidor web (Apache/Nginx).
+- PHP 8.0 o superior.
+- MySQL/MariaDB.
+
+### 2. Configuración de la Base de Datos
+1. Accede a tu gestor de base de datos (ej. phpMyAdmin).
+2. Crea una nueva base de datos llamada `catalogo_hardware` (o el nombre que prefieras).
+3. Importa el archivo `database.sql` ubicado en la raíz del proyecto para generar la estructura y los datos de prueba.
+
+### 3. Configuración del Proyecto
+1. Clona el repositorio en tu carpeta de servidor local (`htdocs` o `www`).
+2. Localiza el archivo `config.example.php`.
+3. Renómbralo a `config.php`.
+4. Edita las variables `$dbname`, `$user` y `$pass` con tus credenciales locales.
+
+```php
+$dbname = "tu_db_nombre";
+$user = "tu_usuario";
+$pass = "tu_password";
+```
+
+## 🌐 Enlace a Producción
+Puedes ver el proyecto desplegado en el siguiente enlace:
+👉 **[Hardware Hub en dwes.site](https://juanjoacevedo.dwes.site/ProyectoAPLWEB-Juanjo/)**
+
+---
+*Desarrollado por Juanjo Acevedo - 2026*

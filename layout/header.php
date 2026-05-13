@@ -38,17 +38,43 @@ require_once 'config.php';
 
     <nav>
         <div class="nav-container">
-            <a href="index.php" class="logo">HARDWARE<span>HUBJUANJO</span></a>
-            <div class="nav-links">
-                <a href="index.php" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Inventario</a>
-                <a href="analitica.php"
-                    class="<?php echo ($currentPage == 'analitica') ? 'active' : ''; ?>">Analítica</a>
-                <a href="auditoria.php"
-                    class="<?php echo ($currentPage == 'auditoria') ? 'active' : ''; ?>">Auditoría</a>
-                <a href="historial.php"
-                    class="<?php echo ($currentPage == 'historial') ? 'active' : ''; ?>">Historial</a>
-                <a href="nuevo.php" class="<?php echo ($currentPage == 'nuevo') ? 'active' : ''; ?>">Añadir</a>
-                <a href="portafolio.html">Portafolio</a>
+            <div class="nav-left">
+                <a href="index.php" class="logo">HARDWARE<span>HUB</span></a>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-group">
+                    <a href="index.php" class="<?php echo ($currentPage == 'index') ? 'active' : ''; ?>">Inventario</a>
+                    <a href="analitica.php" class="<?php echo ($currentPage == 'analitica') ? 'active' : ''; ?>">Analítica</a>
+                    <a href="auditoria.php" class="<?php echo ($currentPage == 'auditoria') ? 'active' : ''; ?>">Auditoría</a>
+                    <a href="historial.php" class="<?php echo ($currentPage == 'historial') ? 'active' : ''; ?>">Historial</a>
+                    
+                    <?php if (is_logged_in()): ?>
+                        <a href="nuevo.php" class="nav-btn-add <?php echo ($currentPage == 'nuevo') ? 'active' : ''; ?>">
+                            <i data-lucide="plus"></i> Registro
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-group">
+                    <a href="portafolio.html" class="nav-link-alt">Portafolio</a>
+                    <div class="nav-divider"></div>
+                    
+                    <?php if (is_logged_in()): ?>
+                        <div class="user-profile">
+                            <div class="user-avatar"><?php echo strtoupper(substr(get_logged_user(), 0, 1)); ?></div>
+                            <div class="user-details">
+                                <span class="u-name"><?php echo get_logged_user(); ?></span>
+                                <a href="logout.php" class="u-logout">Cerrar Sesión</a>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <a href="login.php" class="nav-login-btn">Acceso Admin</a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </nav>
+    <script>lucide.createIcons();</script>

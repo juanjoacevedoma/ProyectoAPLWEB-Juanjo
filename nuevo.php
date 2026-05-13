@@ -2,6 +2,7 @@
 $pageTitle = 'Ingeniería de Hardware | Hardware Hub Pro';
 $currentPage = 'nuevo';
 require_once 'layout/header.php';
+require_auth();
 
 // Procesar el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
