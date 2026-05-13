@@ -49,7 +49,7 @@ $pass = "tu_password";
 
 ## 🌐 Enlace a Producción
 Puedes ver el proyecto desplegado en el siguiente enlace:
-👉 **[Hardware Hub en dwes.site](https://juanjoacevedo.dwes.site/ProyectoAPLWEB-Juanjo/)**
+👉 **[Hardware Hub en dwes.site](https://alumno16.dwes.site/)**
 
 ---
 *Desarrollado por Juanjo Acevedo - 2026*
