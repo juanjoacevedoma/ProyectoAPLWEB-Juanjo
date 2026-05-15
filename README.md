@@ -1,58 +1,101 @@
-# Proyecto APLWEB - Hardware Hub Professional 🛡️
+# Hardware Hub Professional 🛡️
 
-Dashboard profesional de gestión de inventario y mantenimiento de hardware para sistemas corporativos.
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/juanjoacevedoma/ProyectoAPLWEB-Juanjo)
+[![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php&logoColor=white)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## 🚀 Descripción
-Esta aplicación permite el control total sobre un catálogo de componentes de hardware, facilitando el seguimiento de stock, la gestión de marcas y el registro detallado de intervenciones de mantenimiento. Diseñada con una estética **Corporate Pro** basada en Glassmorphism y visualización de datos moderna.
-
-### Características Principales:
-- **Gestión CRUD**: Registro completo de componentes y mantenimientos (Protegido por login).
-- **Control de Acceso**: Sistema de autenticación para asegurar la integridad de los datos.
-- **Analítica en Tiempo Real**: Dashboards visuales para stock y estado de equipos.
-- **Interfaz Premium**: Diseño responsive, modo oscuro y efectos visuales avanzados.
-- **Seguridad**: Configuración protegida mediante archivos de entorno y exclusiones de Git.
-
-## 🔐 Roles y Accesos
-Para acceder a las funciones de gestión, el sistema implementa dos niveles de permisos:
-
-| Rol | Funciones |
-| :--- | :--- |
-| **Administrador** | Control total del sistema + **Gestión de Usuarios**. |
-| **Editor** | Gestión completa del inventario y mantenimientos. |
-
-## 🛠️ Tecnologías Utilizadas
-- **Backend**: PHP 8.2 (PDO para conexiones seguras).
-- **Frontend**: HTML5, CSS3 (Custom Variables, Flexbox, Grid), JavaScript (ES6+).
-- **Base de Datos**: MySQL / MariaDB.
-- **Servidor**: Apache (XAMPP / Producción dwes.site).
-
-## ⚙️ Instalación y Configuración
-
-### 1. Requisitos previos
-- Servidor web (Apache/Nginx).
-- PHP 8.0 o superior.
-- MySQL/MariaDB.
-
-### 2. Configuración de la Base de Datos
-1. Accede a tu gestor de base de datos (ej. phpMyAdmin).
-2. Crea una nueva base de datos llamada `catalogo_hardware` (o el nombre que prefieras).
-3. Importa el archivo `database.sql` ubicado en la raíz del proyecto para generar la estructura y los datos de prueba.
-
-### 3. Configuración del Proyecto
-1. Clona el repositorio en tu carpeta de servidor local (`htdocs` o `www`).
-2. Localiza el archivo `config.example.php`.
-3. Renómbralo a `config.php`.
-4. Edita las variables `$dbname`, `$user` y `$pass` con tus credenciales locales.
-
-```php
-$dbname = "tu_db_nombre";
-$user = "tu_usuario";
-$pass = "tu_password";
-```
-
-## 🌐 Enlace a Producción
-Puedes ver el proyecto desplegado en el siguiente enlace:
-👉 **[Hardware Hub Pro - alumno16.dwes.site](https://alumno16.dwes.site/)**
+Dashboard profesional de alto rendimiento para la gestión centralizada de inventario y mantenimiento de hardware. Diseñado bajo estándares de ingeniería para entornos corporativos de alta demanda.
 
 ---
-*Desarrollado por Juanjo Acevedo - 2026*
+
+## 🚀 Visión General
+
+**Hardware Hub Pro** es una solución integral orientada a departamentos de IT para el control exhaustivo de activos tecnológicos. La plataforma no solo gestiona el stock, sino que proporciona un historial crítico de mantenimientos, métricas en tiempo real y una interfaz optimizada para la eficiencia operativa.
+
+### 💎 Características de Élite
+- **🎛️ Dashboard de Control**: Visualización instantánea del estado de los equipos y niveles de stock.
+- **🔐 Seguridad de Grado Industrial**: Sistema de autenticación con hashing bcrypt y gestión de sesiones segura.
+- **🛠️ Gestión Multicapa**: CRUD avanzado para componentes, marcas y registros de mantenimiento relacionados.
+- **📊 Analítica Integrada**: Reportes técnicos y gráficas dinámicas sobre la distribución de hardware.
+- **📱 Interfaz Adaptive**: Diseño **Glassmorphism 3.0** totalmente responsive y optimizado para múltiples dispositivos.
+- **📜 Trazabilidad**: Registro de auditoría para cada intervención técnica realizada.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+La arquitectura ha sido diseñada priorizando la seguridad, la velocidad y la escalabilidad.
+
+| Capa | Tecnologías |
+| :--- | :--- |
+| **Backend** | ![PHP](https://img.shields.io/badge/PHP-8.2-777BB4) ![PDO](https://img.shields.io/badge/Database-PDO-orange) |
+| **Frontend** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26) ![CSS3](https://img.shields.io/badge/CSS3-1572B6) ![JS](https://img.shields.io/badge/JS-ES6+-F7DF1E) |
+| **Base de Datos** | ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1) ![MariaDB](https://img.shields.io/badge/MariaDB-003545) |
+| **DevOps** | ![Git](https://img.shields.io/badge/Git-F05032) ![XAMPP](https://img.shields.io/badge/Dev-XAMPP-FB7A24) |
+
+---
+
+## ⚙️ Configuración del Entorno
+
+Sigue estos pasos para desplegar una instancia local del sistema:
+
+### 1. Preparación de la Base de Datos 📦
+1. Inicia tu servidor MySQL (vía XAMPP, Docker o nativo).
+2. Crea un esquema denominado `catalogo_hardware`:
+   ```sql
+   CREATE DATABASE catalogo_hardware CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
+3. Importa el archivo estructural primario:
+   - Utiliza la terminal o phpMyAdmin para importar `database.sql`.
+   - Este archivo autogenera las tablas `componentes`, `marcas`, `mantenimientos` y `usuarios`.
+
+### 2. Sincronización del Aplicativo 📂
+1. Clona el repositorio en el directorio raíz de tu servidor (`htdocs` o `www`):
+   ```bash
+   git clone https://github.com/juanjoacevedoma/ProyectoAPLWEB-Juanjo.git
+   ```
+2. Configura las variables de entorno:
+   - Localiza el archivo `config.example.php`.
+   - Renómbralo a `config.php`.
+   - Ajusta los parámetros de conexión:
+     ```php
+     $host = "localhost";
+     $dbname = "catalogo_hardware";
+     $user = "tu_usuario";
+     $pass = "tu_password";
+     ```
+
+### 3. Accesos Predeterminados (Testing) 🔑
+*   **Administrador**: `admin` / `admin`
+*   **Editor**: `prueba` / `prueba`
+
+---
+
+## 🔐 Modelos de Acceso
+
+El sistema implementa un Control de Acceso Basado en Roles (RBAC):
+
+*   **Administrador Privilegiado**: Acceso total al inventario, mantenimientos y panel de **Gestión de Usuarios**.
+*   **Técnico Editor**: Permisos de gestión operativa (CRUD de hardware y registros técnicos).
+
+---
+
+## 🌐 Despliegue en Producción
+
+El entorno de ejecución estable se encuentra disponible en:
+
+👉 **[Hardware Hub Pro v1.2 - Producción](https://alumno16.dwes.site/)**
+
+---
+
+## 📧 Soporte y Autoría
+
+Desarrollado con pasión por el detalle y la excelencia técnica.
+
+**Ingeniero de Software**: Juanjo Acevedo
+**Año**: 2026
+**Ubicación**: Universidad de Almería
+
+---
+*Este proyecto forma parte de la certificación técnica en Aplicaciones Web.*
