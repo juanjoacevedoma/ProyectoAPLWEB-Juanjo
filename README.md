@@ -89,9 +89,9 @@ El entorno de ejecución estable se encuentra disponible en:
 
 Desarrollado con pasión por el detalle y la excelencia técnica.
 
-**Ingeniero de Software**: Juanjo Acevedo
+**Desarrollador Web**: Juanjo Acevedo
 **Año**: 2026
-**Ubicación**: Universidad de Almería
+**Ubicación**: I.E.S.-Cristóbal de Monroy
 
 ---
 *Este proyecto forma parte de la certificación técnica en Aplicaciones Web.*
