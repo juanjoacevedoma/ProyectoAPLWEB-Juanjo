@@ -66,10 +66,6 @@ Sigue estos pasos para desplegar una instancia local del sistema:
      $pass = "tu_password";
      ```
 
-### 3. Accesos Predeterminados (Testing) 🔑
-*   **Administrador**: `admin` / `admin`
-*   **Editor**: `prueba` / `prueba`
-
 ---
 
 ## 🔐 Modelos de Acceso
